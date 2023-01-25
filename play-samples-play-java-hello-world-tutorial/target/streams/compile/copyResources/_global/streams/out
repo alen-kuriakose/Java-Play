@@ -1,0 +1,5 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/alenkuriakose/playframework/play-samples-play-java-hello-world-tutorial/conf/application.conf,/home/alenkuriakose/playframework/play-samples-play-java-hello-world-tutorial/target/scala-2.13/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/alenkuriakose/playframework/play-samples-play-java-hello-world-tutorial/conf/logback.xml,/home/alenkuriakose/playframework/play-samples-play-java-hello-world-tutorial/target/scala-2.13/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/alenkuriakose/playframework/play-samples-play-java-hello-world-tutorial/conf/routes,/home/alenkuriakose/playframework/play-samples-play-java-hello-world-tutorial/target/scala-2.13/classes/routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/home/alenkuriakose/playframework/play-samples-play-java-hello-world-tutorial/conf/META-INF/persistance.xml,/home/alenkuriakose/playframework/play-samples-play-java-hello-world-tutorial/target/scala-2.13/classes/META-INF/persistance.xml)[0m
