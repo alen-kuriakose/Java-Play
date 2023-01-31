@@ -1,5 +1,6 @@
-package models;
+package config;
 
+//import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.MultiPartEmail;
 

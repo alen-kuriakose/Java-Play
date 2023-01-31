@@ -1,4 +1,4 @@
-package models;
+package config;
 
 import org.apache.kafka.clients.consumer.Consumer;
 
@@ -13,6 +13,10 @@ public class KafkaConsumerConfig {
 
     public Consumer consumerConfig(){
         Properties props = new Properties();
+//        props.put("bootstrap.servers", "localhost:9092");
+//        props.put("group.id", "group-id");
+//        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+//        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:29092");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());

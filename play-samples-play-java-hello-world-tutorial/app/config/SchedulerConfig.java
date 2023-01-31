@@ -1,5 +1,6 @@
-package models;
+package config;
 
+import service.EmailJob;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 

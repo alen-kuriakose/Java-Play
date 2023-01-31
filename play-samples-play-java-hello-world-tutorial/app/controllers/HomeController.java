@@ -2,10 +2,15 @@ package controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import config.KafkaConsumerConfig;
+import dao.AnnouncementDao;
 import models.*;
+import org.apache.kafka.clients.consumer.Consumer;
 import play.data.Form;
 import play.mvc.*;
 import play.data.FormFactory;
+import service.*;
+
 import javax.inject.Inject;
 
 import java.io.IOException;
@@ -25,16 +30,25 @@ public class HomeController extends Controller {
 
     KafkaListner kafkaListner;
 
+    MyConsumerRecordHandler recordHandler;
+
+//    @Inject
+//    Consumer<String, String> consumer;
+    KafkaConsumerConfig consumer;
+    Listner listner;
 //    MyActor myActor;
 
 
     @Inject
-    public HomeController(AnnouncementDao announcementDao, FormFactory dataForm, EmailJob emailJob, KafkaProducerFn kafkaProducerFn,KafkaListner kafkaListner) {
+    public HomeController(AnnouncementDao announcementDao, FormFactory dataForm, EmailJob emailJob, KafkaProducerFn kafkaProducerFn,KafkaListner kafkaListner,MyConsumerRecordHandler recordHandler,Listner listner,KafkaConsumerConfig consumer) {
         this.announcementDao = announcementDao;
         this.dataForm = dataForm;
         this.emailJob = emailJob;
         this.kafkaProducerFn = kafkaProducerFn;
         this.kafkaListner = kafkaListner;
+        this.recordHandler=recordHandler;
+        this.listner=listner;
+        this.consumer=consumer;
 //        this.myActor=myActor;
     }
 
@@ -50,15 +64,17 @@ public class HomeController extends Controller {
         ObjectMapper mapper=new ObjectMapper();
         String data=mapper.writeValueAsString(user);
         kafkaProducerFn.send(data);
-//        myActor.createReceive();
-//        kafkaListner.getMessage();
         return ok("Success");
     }
 
     public Result getmessage() throws JsonProcessingException {
-        kafkaListner.getMessage();
+//        kafkaListner.getMessage();
 //        kafkaListner.pollAndProcessMessages();
-        return ok("Message received from cluster");
+//        Consumer<String,String> con=consumer.consumerConfig();
+        MyConsumer myConsumer = new MyConsumer(consumer, recordHandler);
+        myConsumer.start();
+//        listner.start();
+        return ok("Message received ");
     }
 
     public Result tutorial() {
