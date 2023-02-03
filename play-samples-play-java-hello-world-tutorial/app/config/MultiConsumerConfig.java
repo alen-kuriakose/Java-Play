@@ -43,7 +43,6 @@ public class MultiConsumerConfig implements Runnable {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
 
             for (ConsumerRecord<String, String> record : records) {
-                System.out.println("Test12");
                 ObjectMapper mapper=new ObjectMapper();
                 try {
                     User user=mapper.readValue(record.value(),User.class);
