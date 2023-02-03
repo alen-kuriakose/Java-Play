@@ -38,9 +38,11 @@ public class HomeController extends Controller {
     Listner listner;
 //    MyActor myActor;
 
+    RecHandler2 handler2;
+
 
     @Inject
-    public HomeController(AnnouncementDao announcementDao, FormFactory dataForm, EmailJob emailJob, KafkaProducerFn kafkaProducerFn,KafkaListner kafkaListner,MyConsumerRecordHandler recordHandler,Listner listner,KafkaConsumerConfig consumer) {
+    public HomeController(AnnouncementDao announcementDao, FormFactory dataForm, EmailJob emailJob, KafkaProducerFn kafkaProducerFn,KafkaListner kafkaListner,MyConsumerRecordHandler recordHandler,Listner listner,KafkaConsumerConfig consumer,RecHandler2 handler2) {
         this.announcementDao = announcementDao;
         this.dataForm = dataForm;
         this.emailJob = emailJob;
@@ -49,6 +51,7 @@ public class HomeController extends Controller {
         this.recordHandler=recordHandler;
         this.listner=listner;
         this.consumer=consumer;
+        this.handler2=handler2;
 //        this.myActor=myActor;
     }
 
@@ -72,9 +75,13 @@ public class HomeController extends Controller {
 //        kafkaListner.pollAndProcessMessages();
 //        Consumer<String,String> con=consumer.consumerConfig();
         MyConsumer myConsumer = new MyConsumer(consumer, recordHandler);
-        myConsumer.start();
+        Myconsumer2 myconsumer2=new Myconsumer2(consumer,recordHandler);
+//        myConsumer.start();
+//        myConsumer.test();
+//        myconsumer2.start();
 //        listner.start();
-        return ok("Message received ");
+        handler2.testing();
+        return ok("Message received test");
     }
 
     public Result tutorial() {

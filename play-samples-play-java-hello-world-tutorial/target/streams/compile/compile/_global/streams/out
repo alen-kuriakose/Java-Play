@@ -1,2 +1,2 @@
-[0m[[0m[0minfo[0m] [0m[0m/home/alenkuriakose/playframework/Java-Play/play-samples-play-java-hello-world-tutorial/app/service/MyConsumer.java: MyConsumer.java uses unchecked or unsafe operations.[0m
-[0m[[0m[0minfo[0m] [0m[0m/home/alenkuriakose/playframework/Java-Play/play-samples-play-java-hello-world-tutorial/app/service/MyConsumer.java: Recompile with -Xlint:unchecked for details.[0m
+[0m[[0m[0minfo[0m] [0m[0m/home/alenkuriakose/playframework/Java-Play/play-samples-play-java-hello-world-tutorial/app/service/KafkaProducerFn.java: KafkaProducerFn.java uses unchecked or unsafe operations.[0m
+[0m[[0m[0minfo[0m] [0m[0m/home/alenkuriakose/playframework/Java-Play/play-samples-play-java-hello-world-tutorial/app/service/KafkaProducerFn.java: Recompile with -Xlint:unchecked for details.[0m

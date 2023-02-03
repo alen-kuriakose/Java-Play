@@ -13,7 +13,7 @@ public class EmailService {
             email.setSSLOnConnect(true);
             email.addTo("alen.kuriakose@tarento.com", "Alen");
             email.setFrom("me@apache.org", "Me");
-            email.setSubject("The picture");
+            email.setSubject("Test");
             email.setMsg("userName");
             email.setStartTLSEnabled(true);
             email.setAuthentication("alenkuriakosecp@gmail.com", "khmfbneusvfspfhq");

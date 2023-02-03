@@ -28,7 +28,8 @@ libraryDependencies ++= Seq(
   "org.quartz-scheduler" % "quartz" % "2.3.2",
   "com.typesafe.akka" %% "akka-stream-kafka" % "2.0.4",
   "com.typesafe.akka" %% "akka-actor" % "2.5.23",
-  "com.typesafe.akka" %% "akka-stream" % "2.5.23"
+  "com.typesafe.akka" %% "akka-stream" % "2.5.23",
+  "org.projectlombok" % "lombok" % "1.18.12"
 //  "org.springframework.kafka" % "spring-kafka" % "2.7.0.RELEASE",
 //  "org.springframework" % "spring-context" % "5.3.4.RELEASE"
 

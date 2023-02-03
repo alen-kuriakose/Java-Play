@@ -19,10 +19,10 @@ public class KafkaProducerFn {
     public void send(String data) {
         try{
             Producer kafkaProducer= producer.producerConfig();
-//            String topic="test";
-//            String key="test-key";
             System.out.println("Success data sent to cluster.");
+//            for(int i=0;i<12;i++){
             kafkaProducer.send(new ProducerRecord<>("test", data));
+//        }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
